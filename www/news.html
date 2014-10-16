@@ -1,0 +1,91 @@
+<%if%action=archive%/>
+	<%set%title={%}title{%} | Archive%/>
+<%endif%/>
+<%if%action=admin%/>
+	<%set%basetitle={%}title{%}%/>
+	<%set%title={%}title{%} | Admin%/>
+<%endif%/>
+<%if%action=post%/>
+	<%set%title={%}title{%} | {%}post_title{%}%/>
+<%endif%/>
+
+<%include%/start.html%/>
+
+<h2>{%}title{%}</h2>
+
+<%if%action=main%/>
+	<%foreach%post%/>
+		<h3><a href="/news/posts/{%}post,id{%}">{%}post,title{%}</a></h3>
+		<h4>{%}post,date{%}</h4>
+		<p>{%}post,content{%}</p>
+		<hr />
+	<%endforeach%/>
+	<p>Browse <a href="/news/archive/">older posts</a>.</p>
+<%endif%/>
+<%if%action=archive%/>
+	<h3>Archive</h3>
+	<p>
+		<%foreach%post%/>
+			<a href="/news/posts/{%}post,id{%}">{%}post,title{%}</a><br />
+		<%endforeach%/>
+	</p>
+<%endif%/>
+<%if%action=post%/>
+	<h3><a href="/news/posts/{%}post_id{%}">{%}post_title{%}</a></h3>
+	<h4>{%}post_date{%}</h4>
+	<p>{%}post_content{%}</p>
+<%endif%/>
+<%if%action=admin%/>
+	<h3>Admin</h3>
+	<p>Create a <a href="/news/admin/edit/">New Post</a></p>
+	<form enctype="application/x-www-form-urlencoded" accept-charset="UTF-8" action="/news/admin/update/" method="post">
+		<p>
+			<label for="title">Title: </label>
+			<input type="text" name="title" value="{%}basetitle{%}" />
+		</p>
+		<p>
+			<label for="author">Author: </label>
+			<input type="text" name="author" value="{%}author{%}" />
+		</p>
+		<p>
+			<label for="email">Email: </label>
+			<input type="text" name="email" value="{%}author_email{%}" />
+		</p>
+		<p>
+			<label for="uri">URI: </label>
+			<input type="text" name="uri" value="{%}author_uri{%}" />
+		</p>
+		<p>
+			<input type="submit" value="Update" />
+		</p>
+	</form>
+	<h3>All Posts</h3>
+	<p>
+		<%foreach%post%/>
+			<a href="/news/posts/{%}post,id{%}">{%}post,title{%}</a> <a href="/news/admin/delete/{%}post,id{%}">Delete</a> <a href="/news/admin/edit/{%}post,id{%}">Edit</a><br />
+		<%endforeach%/>
+	</p>
+<%endif%/>
+<%if%action=edit%/>
+	<h3>Edit or create post</h3>
+	<h4>Published on {%}post_date{%}</h4>
+	<form enctype="application/x-www-form-urlencoded" accept-charset="UTF-8" action="/news/admin/add/{%}post_id{%}" method="post">
+		<p>
+			<label for="title">Title: </label>
+			<input type="text" name="title" value="{%}post_title{%}" />
+		</p>
+		<p>
+			<label for="summary">Summary: </label>
+			<input type="text" name="summary" value="{%}post_summary{%}" />
+		</p>
+		<p>
+			<label for="content">Content: </label>
+			<textarea wrap="virtual" name="content" rows="25" cols="100">{%}post_content{%}</textarea>
+		</p>
+		<p>
+			<input type="submit" value="Publish" />
+		</p>
+	</form>
+<%endif%/>
+
+<%include%/end.html%/>

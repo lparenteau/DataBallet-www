@@ -1,0 +1,104 @@
+body, div, h1, h2, h3, h4, h5, h6, p, ul, img {
+   margin:0px;
+   padding:0px;
+}
+
+body {
+   font-family: Lato, Arial, Helvetica, sans-serif;
+   background-image: url('/images/ballet.png');
+   background-repeat: no-repeat;
+   background-position: right top;
+   background-color: #FFFFFF;
+}
+
+.container {
+   width: 800px;
+   margin: 0 auto;
+}
+
+#header {
+   padding-top: 25px;
+}
+
+#logo {
+   float: left; 
+}
+
+#header a {
+   color: #000000;
+   text-decoration: none;
+   font-size: 36px;
+}
+
+#tagline {
+   float: left;
+   padding-top: 16px; 
+   padding-left: 20px;
+   color: #595858;
+   width: 500px;
+   font-size: 16px;
+}
+
+#menu ul {
+   float: left;
+   width: 100%;
+   padding-top: 20px;
+   list-style-type: none;
+}
+
+#menu a {
+   float: left;
+   padding-right: 50px;
+}
+
+#menu a:hover {
+   color: #000000;
+}
+
+#menu li {
+   display: inline;
+}
+
+#content {
+   width: 800px;
+   float: left;
+   color: #595858;
+}
+
+#content h2 {
+   font-size: 32px;
+   padding-top: 20px;
+   color: #000000;
+}
+
+#content h3 {
+   font-size: 24px;
+   padding-top: 20px;
+   color: #000000;
+}
+
+#content h4 {
+   font-size: 12px;
+}
+
+#content p {
+   font-size: 16px;
+   padding-top: 20px;
+}
+
+#content ul {
+   list-style-type: none;
+}
+
+#footer {
+   padding-top: 60px;
+   padding-bottom:60px;
+   margin-top: 40px;
+   color: #595858;  
+   font-size: 12px;
+}
+
+a {
+   color: #595858;
+   text-decoration: underline;
+}

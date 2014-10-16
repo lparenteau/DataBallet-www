@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+		<link href="/style.css" rel="stylesheet" type="text/css" media="screen" />
+		<link href="/favicon.ico" rel="icon" type="image/vnd.microsoft.icon" />
+		<link href="http://fonts.googleapis.com/css?family=Lato:900" rel="stylesheet" type="text/css" />
+		<link rel="alternate" type="application/atom+xml" href="http://databallet.com/news/atom.xml" title="{%}title{%}" />
+		<title>{%}title{%}</title>
+	</head>
+	<body>
+	<div id="main">
+		<div class="container">
+			<div id="header">
+				<div id="logo">
+                			<h1><a href="/">DataBallet</a></h1>
+				</div><!-- end logo -->
+				<div id="tagline">
+					<h3>Web { Server + Framework + Database }</h3>
+				</div><!-- end tagline -->
+				<div style="clear:both"></div>
+			</div><!--end header -->
+			<div id="content">
+			<div id="menu">
+				<ul>
+					<li><a href="/">Home</a></li>
+					<li><a href="/source.html">Source Code</a></li>
+					<li><a href="/doc.html">Documentation</a></li>
+					<li><a href="/news/">News</a></li>
+					<%if%auth=1%/>
+					<li><a href="/auth/login/">Login</a></li>
+					<%endif%/>
+					<%if%auth=2%/>
+					<li><a href="/news/admin/">Admin</a></li>
+					<li><a href="/auth/logout/">Logout</a></li>
+					<%endif%/>
+				</ul>
+				<div style="clear:both"></div>
+			</div><!-- end menu -->
